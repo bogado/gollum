@@ -239,6 +239,8 @@ if options[:irb]
     exit 0
   end
 else
+  print "# Starting gollum wiki on #{gollum_path} with #{wiki_options}\n"
+
   require 'gollum/app'
   Precious::App.set(:gollum_path, gollum_path)
   Precious::App.set(:wiki_options, wiki_options)
