@@ -23,9 +23,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.fa-link:before {
+/* bogado: I don't want this showing up
+ .fa-link:before {
   content: "\f0c1";
 }
+*/
 
 .fa-spinner:before {
   content: "\f110";
@@ -83,7 +85,6 @@ div {
 }
 
 html {
-  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -94,8 +95,6 @@ html, body {
 
 body {
   background-color: white;
-  font: 13.34px Helvetica, arial, freesans, clean, sans-serif;
-  font-size: small;
   line-height: 1.4;
 }
 

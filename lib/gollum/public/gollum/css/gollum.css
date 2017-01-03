@@ -12,8 +12,8 @@
 
 /* @section core */
 body, html {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 10px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 12px;
   margin: 0;
   padding: 0;
 }
