@@ -15,7 +15,6 @@ options      = {
 wiki_options = {
   :live_preview  => false,
   :allow_uploads => false,
-  :allow_editing => true,
 }
 
 opts = OptionParser.new do |opts|
@@ -101,6 +100,9 @@ MSG
   end
   opts.on("--emoji", "Parse and interpret emoji tags (e.g. :heart:).") do
     wiki_options[:emoji] = true
+  end
+  opts.on("--edit", "Disable the feature of editing pages.")  do
+    wiki_options[:allow_editing] = true
   end
   opts.on("--no-edit", "Disable the feature of editing pages.")  do
     wiki_options[:allow_editing] = false
