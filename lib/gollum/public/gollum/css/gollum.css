@@ -190,18 +190,19 @@ a:hover, a:visited {
 
 #wiki-footer {
   clear: both;
-  margin: 2em 0 5em;
+  margin: 2em 0 0 0;
 }
 
 .has-sidebar #wiki-footer {
-  width: 70%;
 }
 
 #wiki-header #header-content,
 #wiki-footer #footer-content {
+/*
   background-color: #f7f7f7;
   border: 1px solid #ddd;
   padding: 1em;
+*/
 
   border-radius: 0.5em;
   -moz-border-radius: 0.5em;

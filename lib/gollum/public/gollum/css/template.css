@@ -90,11 +90,11 @@ html {
 }
 
 html, body {
-  color: #333;
+  color: #222;
 }
 
 body {
-  background-color: white;
+  background-color: #eef;
   line-height: 1.4;
 }
 
@@ -129,7 +129,6 @@ a:active, a:hover {
 }
 
 .wikidoc-body {
-  padding: 1em;
   font-size: 15px;
   line-height: 1.7;
   overflow: hidden;
@@ -138,8 +137,11 @@ a:active, a:hover {
 
 @media all and (min-width: 940px) {
   .wikidoc-body {
-    padding: 30px;
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #006;
 }
 
 .wikidoc-body > *:first-child {
@@ -220,7 +222,6 @@ a:active, a:hover {
 .wikidoc-body h1 {
   font-size: 2.5em;
   border-bottom: 1px solid #ddd;
-  color: #000;
   margin-top: 20px;
   margin-bottom: 10px;
 }
@@ -228,7 +229,6 @@ a:active, a:hover {
 .wikidoc-body h2 {
   font-size: 2em;
   border-bottom: 1px solid #eee;
-  color: #000;
 }
 
 .wikidoc-body h3 {
@@ -244,7 +244,6 @@ a:active, a:hover {
 }
 
 .wikidoc-body h6 {
-  color: #777;
   font-size: 1em;
 }
 
@@ -264,9 +263,8 @@ a:active, a:hover {
 }
 
 .wikidoc-body hr {
-  background: transparent url(../images/dirty-shade.png) repeat-x 0 0;
   border: 0 none;
-  color: #ccc;
+  color: #fff;
   height: 4px;
   padding: 0;
 }
