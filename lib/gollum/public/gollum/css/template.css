@@ -556,13 +556,24 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 3px;
 }
 
+.toc-dir {
+  font-weight: bold;
+  border-bottom: 1px solid #000;
+  margin-bottom: 3px;
+  line-height: 1.5;
+}
+
 .toc ul {
-  padding-left: 10px;
   margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#sidebar-content .toc > ul {
+    font-size: 14px;
 }
 
 .toc > ul {
-  margin-left: 10px;
   font-size: 17px;
 }
 
