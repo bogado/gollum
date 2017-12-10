@@ -382,7 +382,6 @@ pre pre {
 
 #wiki-body table {
     display: block;
-    overflow: auto;
     border: 0;
 }
 
