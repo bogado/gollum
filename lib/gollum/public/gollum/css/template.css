@@ -762,8 +762,7 @@ ul.actions li {
 .toc-title {
     color: #888;
     line-height: 1.6;
-    padding: 2px;
-    padding-top: 4px;
+    padding: 4px 2px 8px 2px;
     letter-spacing: 1px;
     font-weight: bold;
     font-variant: all-petite-caps;
@@ -780,6 +779,10 @@ ul.actions li {
     margin: 0;
     padding: 0;
     list-style-type: none;
+}
+
+.toc .current_page {
+    font-style: italic;
 }
 
 #sidebar-content .toc > ul {
