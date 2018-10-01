@@ -1,17 +1,24 @@
 :root {
     --page-background-color: #ebebe0;
-    --box-background-color: white;
-    --box-lighter-background-color: #bbf;
+    --box-background-color: black;
+    --box-body-background-color: white;
+    --table-odd-background-color: #bbf;
+    --table-even-background-color: #88b;
     --button-background-color: linear-gradient(45deg, #f4f4f4, #ececec);
     --button-hover-background-color: linear-gradient(45deg, #e0e0d1, #c2c2a3);
 
     --page-text-color: #222;
-    --head-text-color: #336699;
-    --headers-text-color: #0d5d3c;
-    --link-text-color: #4e4e32;
+    --head-text-color: #e91909;
+    --headers-text-color: #04828c;
+    --link-text-color: var(--head-text-color);
 
     --box-border-color: #ccc;
     --box-border: 1px solid var(--box-border-color);
+}
+
+@font-face {
+    font-family: "vine";
+    src: url("https://home.bogado.net/~bogado/Vine22-Regular.otf");
 }
 
 * {
@@ -174,7 +181,7 @@ dl dd > :last-child {
 }
 
 blockquote {
-    border-left: 4px solid #DDD;
+    border-left: var(--box-border);
     padding: 0 15px;
 }
 
@@ -193,14 +200,14 @@ table {
 }
 
 table tr {
-    border-top: 1px solid #ccc;
-    background-color: var(--box-background-color);
+    border-top: var(--box-border);
+    background-color: var(--table-odd-background-color);
     margin: 0;
     padding: 0;
 }
 
 table tr:nth-child(2n) {
-    background-color: var(--box-lighter-background-color);
+    background-color: var(--table-even-background-color);
 }
 
 table tr th {
@@ -209,7 +216,6 @@ table tr th {
 
 table tr th,
 table tr td {
-    border: var(--box-border);
     text-align: none;
     margin: 0;
     padding: 6px 13px;
@@ -232,9 +238,9 @@ code, pre, tt {
 
 code, tt {
     margin: 0 2px;
-    padding: 0 5px;
+    padding: 0.3em;
     white-space: nowrap;
-    background-color: var(--box-background-color);
+    background-color: var(--box-body-background-color);
     border: 1px solid #ccc;
     border-radius: 1em;
     -moz-border-radius: 1em;
@@ -251,7 +257,7 @@ pre > tt, pre > code {
 
 pre {
     background-color: var(--box-background-color);
-    border: 1px solid #ccc;
+    border: var(--box-border);
     font-size: 13px;
     line-height: 19px;
     overflow: auto;
@@ -277,11 +283,40 @@ pre pre {
     width: 100%;
 }
 
+@media all and (max-width: 940px) {
+    #wiki-sidebar {
+        display: none;
+    }
+}
+
 @media all and (min-width: 940px) {
+
+    /* @section layout */
+    .has-leftbar #wiki-sidebar {
+    }
+
+    .has-rightbar #wiki-sidebar {
+        display: block;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 200px;
+    }
+
+    #sidebar-content  * {
+        overflow: hidden;
+    }
+
     .page {
-        max-width: 920px;
+        display: block;
+        postion: absolute;
+        max-width: 900px;
         padding-left:20px;
         padding-right:20px;
+    }
+
+    #wiki-body {
+        width: 700px;
     }
 }
 
@@ -298,7 +333,7 @@ pre pre {
 }
 
 #head * {
-    height: 40px;
+    height: 1.3em;
 }
 
 #head a {
@@ -306,10 +341,20 @@ pre pre {
 }
 
 #head h1 {
-    float: right;
+    font-size: 4em;
+    float: left;
+    font-family: vine;
+    font-weight: normal !important;
+
     line-height: normal;
     margin: 0;
     vertical-align: top;
+}
+
+/* wiki wrapper */
+#wiki-wrapper {
+    position: absolute;
+    max-width: 900px;
 }
 
 /* @section content */
@@ -331,11 +376,8 @@ pre pre {
 
 #wiki-body {
     display: block;
-    float: left;
-    clear: left;
     margin-right: 3%;
     margin-bottom: 40px;
-    width: 100%;
 }
 
 #wiki-body table {
@@ -345,13 +387,13 @@ pre pre {
 }
 
 .has-sidebar #wiki-body {
-    width: 68%;
+    margin-left: 20px;
 }
 
 /* @sectionblack toc */
 #wiki-toc-main {
-    background-color: var(--box-lighter-background-color);
-    font-size: 0.8em;
+    background-color: var(--box-body-background-color);
+    font-size: 2em;
     padding: 0px 5px;
     float: left;
     margin-bottom: 20px;
@@ -367,27 +409,8 @@ pre pre {
     border: none;
 }
 
+
 /* @section sidebar */
-.has-leftbar #wiki-sidebar {
-    float: left;
-}
-
-.has-rightbar #wiki-sidebar {
-    float: right;
-}
-
-#wiki-sidebar {
-    background-color: var(--box-background-color);
-    border: 1px solid #ddd;
-    padding: 7px;
-    width: 25%;
-    color: #555;
-
-    border-radius: 1em;
-    -moz-border-radius: 1em;
-    -webkit-border-radius: 1em;
-}
-
 #wiki-sidebar p {
     margin: 13px 0 0;
 }
@@ -484,13 +507,18 @@ pre pre {
 
 /* @control minibutton */
 
+.minibutton a:first-child {
+    display: none !important;
+}
+
 ul.actions {
-    display: block;
+    float: right;
     list-style-type: none;
     overflow: hidden;
     padding: 0;
     vertical-align: bottom;
     margin: 0;
+    height: 100%;
 }
 
 ul.actions li {
@@ -503,6 +531,10 @@ ul.actions li {
     border-left: none;
 }
 
+.actions {
+    height: 2.0em !important;
+}
+
 .minibutton a {
     padding-left: 6px;
     padding-right: 6px;
@@ -511,7 +543,6 @@ ul.actions li {
     display: block;
     font-weight: bold;
     margin: 0;
-    height: 1.4em;
 }
 
 #search-submit {
@@ -532,7 +563,6 @@ ul.actions li {
 
 .minibutton a:hover,
 #search-submit:hover {
-    background: ;
     border-color: #518cc6 #518cc6 #2a65a0;
     text-decoration: none;
 }
@@ -546,13 +576,17 @@ ul.actions li {
     float: right;
     padding: 2px 0 0 0;
     overflow: hidden;
+    height: 3em;
+}
+
+#head #searchbar * {
+    height: 2.2em;
 }
 
 #head #searchbar #searchbar-fauxtext {
     background: #fff;
     border: 1px solid #d4d4d4;
     overflow: hidden;
-    height: 2.2em;
 
     border-radius: 0.3em;
     -moz-border-radius: 0.3em;
@@ -659,29 +693,22 @@ ul.actions li {
 }
 
 .toc {
-    background-color: var(--box-background-color);
     padding: 5px 10px;
     margin: 0;
-    border: 1px solid #ddd;
-    border-radius: 1em;
-    -moz-border-radius: 1em;
-    -webkit-border-radius: 1em;
 }
 
 .toc-title {
-    color: #888;
+    color: var(--headers-text-color);
     line-height: 1.6;
-    padding: 4px 2px 8px 2px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    font-variant: all-petite-caps;
+    padding-top: 10px;
+    font-size: 2.2em;
 }
 
 .toc-dir {
-    font-weight: bold;
     border-top: 1px solid #aaa;
     padding-top: 4px;
     line-height: 1.5;
+    font-size: 1.5em;
 }
 
 .toc ul {
@@ -691,7 +718,7 @@ ul.actions li {
 }
 
 .toc .current_page {
-    font-style: italic;
+    display: none;
 }
 
 #sidebar-content .toc > ul {
@@ -699,15 +726,7 @@ ul.actions li {
 }
 
 .toc > ul {
-    font-size: 17px;
-}
-
-.toc ul ul {
     font-size: 15px;
-}
-
-.toc ul ul ul {
-    font-size: 14px;
 }
 
 .toc ul li {
@@ -717,7 +736,8 @@ ul.actions li {
 #header-content .toc,
 #footer-content .toc,
 #sidebar-content .toc {
-    border: none;
+    font-family: vine;
+    font-weight: normal !important;
 }
 
 // Syntax highlight
