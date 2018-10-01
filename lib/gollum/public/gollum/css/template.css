@@ -2,6 +2,7 @@
     --page-background-color: #ebebe0;
     --box-background-color: black;
     --box-body-background-color: white;
+    --table-header-background-color: #558;
     --table-odd-background-color: #bbf;
     --table-even-background-color: #88b;
     --button-background-color: linear-gradient(45deg, #f4f4f4, #ececec);
@@ -11,6 +12,7 @@
     --head-text-color: #e91909;
     --headers-text-color: #04828c;
     --link-text-color: var(--head-text-color);
+    --table-header-color: #ddf;
 
     --box-border-color: #ccc;
     --box-border: 1px solid var(--box-border-color);
@@ -199,6 +201,11 @@ table {
     border-spacing: 0;
 }
 
+table thead tr {
+    background-color: var(--table-header-background-color);
+    color: var(--table-header-color);
+}
+
 table tr {
     border-top: var(--box-border);
     background-color: var(--table-odd-background-color);
@@ -376,17 +383,12 @@ pre pre {
 
 #wiki-body {
     display: block;
-    margin-right: 3%;
     margin-bottom: 40px;
 }
 
 #wiki-body table {
     display: block;
     border: 0;
-}
-
-.has-sidebar #wiki-body {
-    margin-left: 20px;
 }
 
 /* @sectionblack toc */
