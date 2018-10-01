@@ -1,28 +1,22 @@
-/*
-Gollum v3 Template
- */
+:root {
+    --page-background-color: #ebebe0;
+    --box-background-color: white;
+    --box-lighter-background-color: #bbf;
+    --button-background-color: linear-gradient(45deg, #f4f4f4, #ececec);
+    --button-hover-background-color: linear-gradient(45deg, #e0e0d1, #c2c2a3);
 
-/*!
- *  Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
- *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
- */
-@font-face {
-    font-family: 'FontAwesome';
-    src: url('../fonts/fontawesome-webfont.eot?v=4.0.3');
-    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+    --page-text-color: #222;
+    --head-text-color: #336699;
+    --headers-text-color: #0d5d3c;
+    --link-text-color: #4e4e32;
+
+    --box-border-color: #ccc;
+    --box-border: 1px solid var(--box-border-color);
 }
 
-
-/* margin & padding reset*/
 * {
     margin: 0;
     padding: 0;
-}
-
-div {
-    display: block;
 }
 
 html {
@@ -31,8 +25,8 @@ html {
 }
 
 html, body {
-    color: #222;
-    background-color: #ebebe0;
+    color: var(--page-text-color);
+    background-color: var(--page-background-color);
     line-height: 1.4;
     font-family: 'Roboto Slab', serif;
     font-size: 14px;
@@ -40,7 +34,7 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #5d5d3c;
+    color: var(--headers-text-color);
     margin: 1em 0 5px;
     padding: 0;
     font-weight: bold;
@@ -93,28 +87,24 @@ h6 {
 }
 
 img {
-    border: 1px solid #ccc;
+    border: var(--box-border);
     border-radius: 1em;
     -moz-border-radius: 1em;
     -webkit-border-radius: 1em;
 }
 
 a {
-    color: #4e4e32;
+    color: var(--link-text-color);
     text-decoration: none;
 }
 
 a:hover, a:visited {
-    color: #4e4e32;
     text-decoration: underline;
     outline: 0;
 }
 
 a:focus {
     outline: thin dotted;
-}
-
-a:active, a:hover {
 }
 
 a.anchor:focus {
@@ -136,7 +126,7 @@ li p:first-child {
 
 hr {
     border: 0 none;
-    color: #fff;
+    color: var(--box-border-color);
     height: 4px;
     padding: 0;
 }
@@ -186,7 +176,6 @@ dl dd > :last-child {
 blockquote {
     border-left: 4px solid #DDD;
     padding: 0 15px;
-    color: #777;
 }
 
 blockquote > :first-child {
@@ -205,13 +194,13 @@ table {
 
 table tr {
     border-top: 1px solid #ccc;
-    background-color: #fff;
+    background-color: var(--box-background-color);
     margin: 0;
     padding: 0;
 }
 
 table tr:nth-child(2n) {
-    background-color: #f8f8f8;
+    background-color: var(--box-lighter-background-color);
 }
 
 table tr th {
@@ -220,7 +209,7 @@ table tr th {
 
 table tr th,
 table tr td {
-    border: 1px solid #ccc;
+    border: var(--box-border);
     text-align: none;
     margin: 0;
     padding: 6px 13px;
@@ -245,7 +234,7 @@ code, tt {
     margin: 0 2px;
     padding: 0 5px;
     white-space: nowrap;
-    background-color: #f8f8f8;
+    background-color: var(--box-background-color);
     border: 1px solid #ccc;
     border-radius: 1em;
     -moz-border-radius: 1em;
@@ -261,7 +250,7 @@ pre > tt, pre > code {
 }
 
 pre {
-    background-color: #f8f8f8;
+    background-color: var(--box-background-color);
     border: 1px solid #ccc;
     font-size: 13px;
     line-height: 19px;
@@ -296,74 +285,8 @@ pre pre {
     }
 }
 
-.fa {
-    display: inline-block;
-    font: normal normal 16px FontAwesome;
-    line-height: 1;
-    text-decoration: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* bogado: I don't want this showing up
-.fa-link:before {
-content: "\f0c1";
-}
- */
-
-.fa-spinner:before {
-    content: "\f110";
-}
-
-.fa-spin {
-    -webkit-animation: spin 2s infinite linear;
-    -moz-animation: spin 2s infinite linear;
-    -o-animation: spin 2s infinite linear;
-    animation: spin 2s infinite linear;
-}
-@-moz-keyframes spin {
-    0% {
-        -moz-transform: rotate(0deg);
-    }
-    100% {
-        -moz-transform: rotate(359deg);
-    }
-}
-@-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(359deg);
-    }
-}
-@-o-keyframes spin {
-    0% {
-        -o-transform: rotate(0deg);
-    }
-    100% {
-        -o-transform: rotate(359deg);
-    }
-}
-@keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(359deg);
-        transform: rotate(359deg);
-    }
-}
-
 .clearfloats {
     clear: both;
-}
-
-.emoji {
-    width: 20px;
-    height: 20px;
-    vertical-align: -18%;
 }
 
 /* @section head */
@@ -371,7 +294,7 @@ content: "\f0c1";
     margin: 1em 0 0;
     padding: 0;
     overflow: hidden;
-    border-bottom: solid 2px #aaa;
+    border-bottom: var(--box-border);
 }
 
 #head * {
@@ -379,7 +302,7 @@ content: "\f0c1";
 }
 
 #head a {
-    color: #336699;
+    color: var(--head-text-color);
 }
 
 #head h1 {
@@ -425,9 +348,9 @@ content: "\f0c1";
     width: 68%;
 }
 
-/* @section toc */
+/* @sectionblack toc */
 #wiki-toc-main {
-    background-color: #f7f7f7;
+    background-color: var(--box-lighter-background-color);
     font-size: 0.8em;
     padding: 0px 5px;
     float: left;
@@ -454,7 +377,7 @@ content: "\f0c1";
 }
 
 #wiki-sidebar {
-    background-color: #f7f7f7;
+    background-color: var(--box-background-color);
     border: 1px solid #ddd;
     padding: 7px;
     width: 25%;
@@ -500,7 +423,7 @@ content: "\f0c1";
 
 #wiki-footer #footer-content h3 {
     font-size: 1.2em;
-    color: #333;
+    color: var(--head-text-color);
     margin: 0;
     padding: 0 0 0.2em;
     text-shadow: 0 1px 0 #fff;
@@ -518,7 +441,6 @@ content: "\f0c1";
 }
 
 #wiki-footer #footer-content ul.links li {
-    color: #999;
     float: left;
     list-style-position: inside;
     list-style-type: square;
@@ -528,7 +450,6 @@ content: "\f0c1";
 
 #wiki-footer #footer-content ul.links li a {
     font-weight: bold;
-    text-shadow: 0 1px 0 #fff;
 }
 
 #wiki-footer #footer-content ul.links li:first-child {
@@ -548,9 +469,8 @@ content: "\f0c1";
 }
 
 #footer p#last-edit {
-    font-size: .9em;
+    font-size: .7em;
     line-height: 1.6em;
-    color: #999;
     margin: 0.9em 0;
 }
 
@@ -595,19 +515,15 @@ ul.actions li {
 }
 
 #search-submit {
-    background-color: #f7f7f7;
-    border: 1px solid #d4d4d4;
-    color: #333;
+    background: var(--button-background-color);
+    border: var(--box-border);
+    color: var(--button-background-color);
     display: block;
     font-weight: bold;
     margin: 0;
     padding: 0.4em 1em;
 
     text-shadow: 0 1px 0 #fff;
-
-    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#f4f4f4', endColorstr='#ececec');
-    background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#ececec));
-    background: -moz-linear-gradient(top, #f4f4f4, #ececec);
 
     border-radius: 3px;
     -moz-border-radius: 3px;
@@ -616,15 +532,9 @@ ul.actions li {
 
 .minibutton a:hover,
 #search-submit:hover {
-    background: #3072b3;
+    background: ;
     border-color: #518cc6 #518cc6 #2a65a0;
-    color: #fff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
     text-decoration: none;
-
-    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#e0e0d1', endColorstr='#c2c2a3');
-    background: -webkit-gradient(linear, left top, left bottom, from(#e0e0d1), to(#c2c2a3));
-    background: -moz-linear-gradient(top, #e0e0d1, #c2c2a3);
 }
 
 .minibutton a:visited {
@@ -749,7 +659,7 @@ ul.actions li {
 }
 
 .toc {
-    background-color: #F7F7F7;
+    background-color: var(--box-background-color);
     padding: 5px 10px;
     margin: 0;
     border: 1px solid #ddd;
@@ -809,6 +719,8 @@ ul.actions li {
 #sidebar-content .toc {
     border: none;
 }
+
+// Syntax highlight
 
 .highlight {
     background: #fff;
