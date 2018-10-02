@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --page-background-color: #ebebe0;
     --box-background-color: black;
@@ -23,9 +29,74 @@
     src: url("https://home.bogado.net/~bogado/Vine22-Regular.otf");
 }
 
-* {
-    margin: 0;
-    padding: 0;
+@media all and (max-width: 940px) {
+    .page {
+        padding-left:5px;
+        padding-right:5px;
+        width: 100%;
+    }
+
+    #sidebar-content {
+        background: var(--page-background-color);
+        width: 200px;
+        height: 0px;
+        transform: scaley(0);
+        transform-origin: top;
+        overflow: hidden;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    #wiki-sidebar {
+        position: fixed;
+        top: 20px;
+        right: 10px;
+        z-index: 2;
+    }
+
+    #wiki-sidebar:hover #sidebar-content {
+        transform: scaley(1);
+        height: auto;
+    }
+
+    #wiki-sidebar::before {
+        display: block;
+        content: "⊜";
+        text-align: right;
+        font-size: 35px;
+        width: 200px;
+        color: var(--head-text-color);
+    }
+}
+
+@media all and (min-width: 940px) {
+
+    /* @section layout */
+    .has-leftbar #wiki-sidebar {
+    }
+
+    .has-rightbar #wiki-sidebar {
+        display: block;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 200px;
+    }
+
+    #sidebar-content  * {
+        overflow: hidden;
+    }
+
+    .page {
+        display: block;
+        postion: absolute;
+        max-width: 900px;
+        padding-left:20px;
+        padding-right:20px;
+    }
+
+    #wiki-body {
+        width: 700px;
+    }
 }
 
 html {
@@ -100,6 +171,16 @@ img {
     border-radius: 1em;
     -moz-border-radius: 1em;
     -webkit-border-radius: 1em;
+    max-width: 100%;
+    object-fit: scale-down;
+}
+
+a img {
+    border: 0;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    vertical-align: middle;
 }
 
 a {
@@ -285,46 +366,7 @@ pre pre {
 }
 
 .page {
-    margin: 5px;
     overflow: visible;
-    width: 100%;
-}
-
-@media all and (max-width: 940px) {
-    #wiki-sidebar {
-        display: none;
-    }
-}
-
-@media all and (min-width: 940px) {
-
-    /* @section layout */
-    .has-leftbar #wiki-sidebar {
-    }
-
-    .has-rightbar #wiki-sidebar {
-        display: block;
-        position: absolute;
-        top: 80px;
-        right: 0;
-        width: 200px;
-    }
-
-    #sidebar-content  * {
-        overflow: hidden;
-    }
-
-    .page {
-        display: block;
-        postion: absolute;
-        max-width: 900px;
-        padding-left:20px;
-        padding-right:20px;
-    }
-
-    #wiki-body {
-        width: 700px;
-    }
 }
 
 .clearfloats {
@@ -1035,4 +1077,9 @@ ul.actions li {
 
 .type-csharp .highlight .sc {
     color: #A31515;
+}
+
+/* Youtube embeding */
+iframe {
+    max-width: 100%;
 }
