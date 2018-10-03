@@ -69,6 +69,22 @@
 }
 
 @media all and (min-width: 940px) {
+    #wiki-wrapper {
+        width: 940px;
+    }
+
+    #head #searchbar {
+        padding: 0;
+    }
+
+    #head #searchbar #searchbar-fauxtext #search-submit span {
+        width: 28px;
+    }
+
+    #head #searchbar #searchbar-fauxtext #search-submit:hover span {
+        background-position: -431px -28px;
+    }
+
 
     /* @section layout */
     .has-leftbar #wiki-sidebar {
@@ -88,8 +104,8 @@
 
     .page {
         display: block;
-        postion: absolute;
-        max-width: 900px;
+        position: absolute;
+        width: 920px;
         padding-left:20px;
         padding-right:20px;
     }
@@ -320,7 +336,7 @@ table tr td > :last-child {
 }
 
 code, pre, tt {
-    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    font-family: 'Cousine', Monospaced;
     font-size: 12px;
 }
 
@@ -380,6 +396,18 @@ pre pre {
     overflow: hidden;
     border-bottom: var(--box-border);
 }
+    #head #searchbar {
+        padding: 0;
+    }
+
+    #head #searchbar #searchbar-fauxtext #search-submit span {
+        width: 28px;
+    }
+
+    #head #searchbar #searchbar-fauxtext #search-submit:hover span {
+        background-position: -431px -28px;
+    }
+
 
 #head * {
     height: 1.3em;
@@ -403,7 +431,6 @@ pre pre {
 /* wiki wrapper */
 #wiki-wrapper {
     position: absolute;
-    max-width: 900px;
 }
 
 /* @section content */
@@ -689,20 +716,6 @@ ul.actions li {
 #head #searchbar #searchbar-fauxtext #search-submit:hover span {
     background-position: -431px -28px;
     padding: 0;
-}
-
-@media all and (min-width: 940px) {
-    #head #searchbar {
-        padding: 0;
-    }
-
-    #head #searchbar #searchbar-fauxtext #search-submit span {
-        width: 28px;
-    }
-
-    #head #searchbar #searchbar-fauxtext #search-submit:hover span {
-        background-position: -431px -28px;
-    }
 }
 
 .wikidoc-body {
